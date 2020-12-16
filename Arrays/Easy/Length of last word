@@ -1,0 +1,14 @@
+class Solution {
+    public int lengthOfLastWord(String s) {
+       int flag=0;
+        String[] str = s.split("[\\ ]");
+        if(str.length!=0)
+        {
+            int index = str.length-1;
+            flag= (str[index].length()); 
+        }
+           
+        
+       return(flag);
+    }
+}
