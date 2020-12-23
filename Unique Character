@@ -1,0 +1,23 @@
+import java.util.LinkedHashMap;
+class Solution {
+    public int firstUniqChar(String str) {
+     LinkedHashMap<Character,Integer> map = new LinkedHashMap<>();
+     for (int i = 0; i < str.length(); i++) {
+            int localcount = 0;
+            if (map.containsKey(str.charAt(i)))
+                localcount = map.get(str.charAt(i));
+            map.put(str.charAt(i), localcount + 1);
+        }
+        char var = ' ';
+        Iterator itr = map.entrySet().iterator();
+        while (itr.hasNext()) {
+            Map.Entry mapElement = (Map.Entry) itr.next();
+            if ((int) mapElement.getValue() == 1) {
+                var = (char) mapElement.getKey();
+                break;
+            }
+        }
+        
+        return str.indexOf(var);
+    }
+}
