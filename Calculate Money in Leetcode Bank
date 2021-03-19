@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class Bank {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int val=1 , mon=val,sum=0;
+        int n = scan.nextInt();
+        for (int i=1;i<=n;i++)
+        {
+            if ((i>1)&&((i-1)%7==0))
+            {
+                val=mon+1;
+                mon=val;
+            }
+            sum+=val++;
+
+        }
+        System.out.println(sum);
+    }
+}
