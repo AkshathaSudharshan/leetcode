@@ -1,0 +1,11 @@
+class Solution {
+    public int[] shuffle(int[] nums, int n) {
+        List<Integer> shuffledList = new ArrayList<Integer>();
+        for(int i=0,j=n;j<nums.length&&i<n;i++,j++){
+            shuffledList.add(nums[i]);
+             shuffledList.add(nums[j]);
+        }
+     int[] array = shuffledList.stream().mapToInt(i->i).toArray();
+    return array;
+    }
+}
