@@ -1,0 +1,14 @@
+class Solution {
+    public int[] shuffle(int[] nums, int n) {
+        int[] shuffledArray = new int[2*n];
+        int p=0,q=n;
+    for(int i=0;i<2*n&&p<=n&&q<=2*n;i=i+2)
+{
+        shuffledArray[i]=nums[p];
+        shuffledArray[i+1]=nums[q];
+	    p++;
+	    q++;
+}
+        return shuffledArray;
+    }
+}
