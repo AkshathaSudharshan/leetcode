@@ -1,0 +1,12 @@
+class Solution {
+    public boolean checkIfPangram(String sentence) {
+        if(sentence.length()<26)
+            return false;
+        else {
+            Set<Character> set = sentence.chars()
+                    .mapToObj(ch -> (char)ch)
+                    .collect(Collectors.toSet());
+            return  set.size()==26? true:false;
+        } 
+    }
+}
