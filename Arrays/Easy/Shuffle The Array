@@ -1,0 +1,8 @@
+public int[] shuffle(int[] nums, int n) {
+         int[] arrayShuffle = new int[nums.length];
+        for (int i=0,j=n,k=0;i<j&&j< nums.length;j++,i++,k+=2){
+            arrayShuffle[k]=nums[i];
+            arrayShuffle[k+1]=nums[j];
+        }
+        return arrayShuffle;
+    }
