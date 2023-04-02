@@ -1,0 +1,26 @@
+class Solution {
+    public int findDuplicate(int[] nums) {
+       int i=0;
+        while (i< nums.length){
+            if(!(i+1==nums[i])){
+                int index=nums[i];
+                if(nums[index-1]==nums[i]){
+                    i++;
+                }
+                else {
+                    int temp=nums[index-1];
+                    nums[index-1]=nums[i];
+                    nums[i]=temp;
+                }
+
+            }else
+                i++;
+        }
+        for(i=0;i< nums.length;i++){
+            if(i+1!=nums[i])
+                return nums[i];
+        }
+        return -1;
+
+    }
+}
